@@ -6,8 +6,13 @@ import net.serenitybdd.screenplay.actions.Open;
 
 public class NavigateTo {
 
-    public static Performable LoginPage() {
+    public static Performable LandingPage() {
         return Task.where("{0} opens the home page",
-                Open.browserOn().the(ComplaintPage.class));
+                Open.browserOn().the(LandingPage.class));
+    }
+
+    public static Performable LoginPage() {
+        return Task.where("{0} opens the login page",
+                Open.browserOn().the(ComplaintzAdminPage.class));
     }
 }
