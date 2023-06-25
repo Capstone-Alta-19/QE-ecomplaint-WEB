@@ -28,5 +28,32 @@ public class ComplaintzAdminDefinitions {
     @And("{actor} input invalid password {string}")
     public void inputInvalidPassword(Actor actor, String InvPassword){actor.attemptsTo(DoAnAction.invalidPassword(InvPassword));}
 
+    @Given("{actor} login on the website Complaint with valid username {string} and valid password {string}")
+    public void loginWebsiteAdmin(Actor actor, String username, String password){
+        onTheLoginPage(actor);
+        inputValidUsername(actor, username);
+        inputValidPassword(actor, password);
+        clickButtonLogin(actor);
+    }
+    @When("{actor} click button report")
+    public void clickButtonReport(Actor actor){actor.attemptsTo(DoAnAction.clickReport());}
+
+    @Then("{actor} click button view details")
+    public void clickButtonViewDetails(Actor actor){actor.attemptsTo(DoAnAction.clickViewDetailsReport());
+
+    }
+//    @And("{actor} input feedback {string}")
+//    public void inputFeedback(Actor actor, String feedback){actor.attemptsTo(DoAnAction.FieldFeedback(feedback));}
+//
+//    @Then("{actor} click send button")
+//    public void clickSendButton(Actor actor){actor.attemptsTo(DoAnAction.clickSend());}
+
+    @When("{actor} click button news")
+    public void clickButtonNews(Actor actor){actor.attemptsTo(DoAnAction.clickNews());}
+
+    @Then("{actor} click view details button on news")
+    public void clickViewDetailsNews(Actor actor){actor.attemptsTo(DoAnAction.ViewDetailsNews());}
+
+
 
 }

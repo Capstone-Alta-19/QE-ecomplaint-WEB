@@ -57,5 +57,33 @@ public class DoAnAction {
                         .into(ComplaintzAdminPage.FIELD_PASSWORD)
         );
     }
+    public static Performable clickReport(){
+        return Task.where("{0} click button report",
+                Click.on(ComplaintzAdminPage.BUTTON_REPORT));
+    }
+    public static Performable clickViewDetailsReport(){
+        return Task.where("{0} click button view details report",
+                Click.on(ComplaintzAdminPage.VIEW_DETAILS_REPORT));
+    }
+//    public static Performable FieldFeedback(String feedback) {
+//        return Task.where("{0} email field with " + feedback,
+//                Enter.theValue(feedback)
+//                        .into(ComplaintzAdminPage.INPUT_FEEDBACK)
+//        );
+//    }
+//    public static Performable clickSend(){
+//        return Task.where("{0} click button send",
+//                Click.on(ComplaintzAdminPage.BUTTON_SEND));
+//    }
+
+    public static Performable clickNews(){
+        return Task.where("{0} click button news",
+                Click.on(ComplaintzAdminPage.CLICK_NEWS));
+    }
+
+    public static Performable ViewDetailsNews(){
+        return Task.where("{0} click view details news",
+                Click.on(ComplaintzAdminPage.DETAILS_VIEW_NEWS));
+    }
 
 }
