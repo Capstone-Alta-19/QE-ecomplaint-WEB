@@ -86,4 +86,57 @@ public class DoAnAction {
                 Click.on(ComplaintzAdminPage.DETAILS_VIEW_NEWS));
     }
 
+    public static Performable AddNews(){
+        return Task.where("{0} click view add news",
+                Click.on(ComplaintzAdminPage.BUTTON_ADD_NEWS));
+    }
+    public static Performable InputNewsTitle(String title) {
+        return Task.where("{0} title field with " + title,
+                Enter.theValue(title)
+                        .into(ComplaintzAdminPage.INPUT_NEWS_TITLE)
+        );
+    }
+    public static Performable ChooseStatus(){
+        return Task.where("{0} click choose status",
+                Click.on(ComplaintzAdminPage.CHOOSE_STATUS));
+    }
+    public static Performable DetailsNews(String detail) {
+        return Task.where("{0} details news field with " + detail,
+                Enter.theValue(detail)
+                        .into(ComplaintzAdminPage.DETAILS_NEWS)
+        );
+    }
+    public static Performable AddPicture(){
+        return Task.where("{0} click add picture",
+                Click.on(ComplaintzAdminPage.ADD_PICTURE));
+    }
+    public static Performable SubmitNews(){
+        return Task.where("{0} click submit news",
+                Click.on(ComplaintzAdminPage.BUTTON_SUBMIT_NEWS));
+    }
+    public static Performable ViewEdit(){
+        return Task.where("{0} click view edit",
+                Click.on(ComplaintzAdminPage.VIEW_EDIT));
+    }
+    public static Performable Edit(){
+        return Task.where("{0} click edit",
+                Click.on(ComplaintzAdminPage.EDIT));
+    }
+    public static Performable ViewStatus(){
+        return Task.where("{0} click view status",
+                Click.on(ComplaintzAdminPage.VIEW_STATUS));
+    }
+    public static Performable SaveStatus(){
+        return Task.where("{0} click save status",
+                Click.on(ComplaintzAdminPage.SAVE_STATUS));
+    }
+    public static Performable DeleteStatus(){
+        return Task.where("{0} click delete status",
+                Click.on(ComplaintzAdminPage.DELETE_STATUS));
+    }
+    public static Performable Logout(){
+        return Task.where("{0} click logout",
+                Click.on(ComplaintzAdminPage.LOGOUT));
+    }
+
 }

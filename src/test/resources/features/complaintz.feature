@@ -43,8 +43,41 @@ Feature: Complaint Admin
 #    And user input feedback ""
 #    Then user click send button
 
-  @Berita @NormalPositive @News
+  @News @NormalPositive @DetailsNews
     Scenario: user can view details news
     Given user login on the website Complaint with valid username "admin" and valid password "admin123"
-    Given user click button news
+    When user click button news
     Then user click view details button on news
+
+  @News @NormalPositive @AddNews
+    Scenario: user can add news
+    Given user login on the website Complaint with valid username "admin" and valid password "admin123"
+    When user click button news
+    And user click button add news
+    And user input title news "Testing QE"
+    And user choose button mahasiswa
+    And user input details news "About Complaint"
+    And user add picture
+    Then user click button send news
+
+  @Dashboard @NormalPositive @ChangeStatus
+    Scenario: user can change status complaint
+    Given user login on the website Complaint with valid username "admin" and valid password "admin123"
+    When user click button view edit
+    And user click button edit
+    And user click button detail status
+    And user click button resolved
+    Then user click button save
+
+  @Dashboard @NormalPositive @DeleteStatus
+    Scenario: user can delete status complaint
+    Given user login on the website Complaint with valid username "admin" and valid password "admin123"
+    When user click button view edit
+    And user click button edit
+    Then user click button delete
+
+  @Logout @NormalPositive @Logout
+    Scenario: user can logout from website
+    Given user login on the website Complaint with valid username "admin" and valid password "admin123"
+    And user click button logout
+

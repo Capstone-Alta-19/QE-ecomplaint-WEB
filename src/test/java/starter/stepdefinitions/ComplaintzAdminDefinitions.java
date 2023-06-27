@@ -54,6 +54,47 @@ public class ComplaintzAdminDefinitions {
     @Then("{actor} click view details button on news")
     public void clickViewDetailsNews(Actor actor){actor.attemptsTo(DoAnAction.ViewDetailsNews());}
 
+    @When("{actor} click button add news")
+    public void clickAddNews(Actor actor){actor.attemptsTo(DoAnAction.AddNews());}
+
+    @And("{actor} input title news {string}")
+    public void inputTitleNews(Actor actor, String title){actor.attemptsTo(DoAnAction.InputNewsTitle(title));}
+
+    @And("{actor} choose button mahasiswa")
+    public void chooseButtonMahasiswa(Actor actor){actor.attemptsTo(DoAnAction.ChooseStatus());}
+
+    @And("{actor} input details news {string}")
+    public void inputDetailsNews(Actor actor, String details){actor.attemptsTo(DoAnAction.DetailsNews(details));}
+
+    @And("{actor} add picture")
+    public void addPictures(Actor actor){actor.attemptsTo(DoAnAction.AddPicture());}
+
+    @Then("{actor} click button send news")
+    public void buttonSendNews(Actor actor){actor.attemptsTo(DoAnAction.SubmitNews());}
+
+    @When("{actor} click button view edit")
+    public void buttonViewEdit(Actor actor){actor.attemptsTo(DoAnAction.ViewEdit());}
+
+    @And("{actor} click button edit")
+    public void buttonEdit(Actor actor){actor.attemptsTo(DoAnAction.Edit());}
+
+    @And("{actor} click button detail status")
+    public void detailStatus(Actor actor){actor.attemptsTo(DoAnAction.ViewStatus());}
+
+    @And("{actor} click button resolved")
+    public void buttonResolved(Actor actor){actor.attemptsTo(DoAnAction.ViewStatus());}
+
+    @Then("{actor} click button save")
+    public void buttonSave(Actor actor){actor.attemptsTo(DoAnAction.SaveStatus());}
+
+    @Then("{actor} click button delete")
+    public void buttonDelete(Actor actor){actor.attemptsTo(DoAnAction.DeleteStatus());}
+
+    @And("{actor} click button logout")
+    public void buttonLogout(Actor actor){actor.attemptsTo(DoAnAction.Logout());}
+
+
+
 
 
 }
